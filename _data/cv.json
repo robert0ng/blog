@@ -33,14 +33,14 @@
       "website": "https://www.nextbank.com.tw",
       "startDate": "Feb, 2020",
       "endDate": "Current",
-      "summary": "Delivered and maintained solid & smooth Android app experiences with product owner, financial system PMs and financial product teams",
+      "summary": "Keep delivering solid Android app experiences based on maintainable codebase with product teams",
       "highlights": [
         "Coaching team members to improve skillsets through regular code review and sharing mindset",
-        "Running Scrum mostly and helping PO clarify and define specs",
-        "Coordinating with an out-sourcing team of 6 members to deliver maintainable code",
-        "Provide and maintain several solid base components for feature development including SDK integration/DialogUtil/cross-activity-fragment data sharing mechanism/BaseToolbar with unit tests",
+        "Running Scrum and helping PO clarify specs",
+        "Provide and maintain solid base components for feature development including SDK integration/DialogUtil/cross-activity-fragment data sharing mechanism/BaseToolbar with unit tests",
         "Develop a background expiration timer to monitor user interaction",
-        "Try to have fun and also figuring out how Azure Devops CI pipeline and policies works"
+        "Try to have fun and also figuring out how Azure Devops CI pipeline and policies works",
+        "Recruite and help members to get onboard smoothly"
       ]
     },
     {
