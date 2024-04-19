@@ -21,7 +21,7 @@ tags:
 3. 以 stickyHeader 呈現關鍵字，讓它可以在手勢向上的時候收起來
 4. 進入頁面時直接跳出鍵盤，方便直接搜尋
 
-![Screenshot](Screenshot_20240416_094524.png){: width="250" }
+![Screenshot](Screenshot_20240416_094524.png)
 
 
 Crash 發生在不同手機上稍微不同：在 VIVO X80 上進到頁面後，輸入任何關鍵字在按下鍵盤上的搜尋，便會直接 crash；在其他手機上需要比較複雜的操作：
