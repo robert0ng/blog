@@ -21,7 +21,8 @@ tags:
 3. 以 stickyHeader 呈現關鍵字，讓它可以在手勢向上的時候收起來
 4. 進入頁面時直接跳出鍵盤，方便直接搜尋
 
-![Screenshot_20240416_094524.png|480]]
+
+![screenshot](Screenshot_20240416_094524.png)
 
 ![wanna coding](wanna_coding.png)
 
