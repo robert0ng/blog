@@ -1,7 +1,7 @@
 ---
 author: robertwang
 layout: post
-title:  "App 中兩個 thread 同時操作 List 造成 Crash"
+title:  "兩個 thread 同時操作 List 造成 Crash"
 date:   2024-04-19
 tags: 
   - android
@@ -10,9 +10,9 @@ tags:
 
 ---
 
-在台灣，某間公司的 App 我曾參與其中。
+聽起來很糟糕對吧！這種常見的 threading 錯誤示範怎麼會通過 CodeReview 進到 PROD CODE呢？
 
-以上為前情提要。
+請容我說來...
 
 在某個版本 App 中有一個展示熱門商品列表的頁面，它的行為有：
 
@@ -22,7 +22,11 @@ tags:
 4. 進入頁面時直接跳出鍵盤，方便直接搜尋
 
 
-![screenshot]({{ site.url }}/assets/images/Screenshot_20240416_094524.png) {: width="480"}
+![screenshot]({{ site.url }}/assets/images/Screenshot_20240416_094524.png){:width="480px"}
+
+這問題發生的原因主要是 UX 設計上版本更迭後造成的：第一個版本進到畫面時並不會呼叫 API，只有在按下搜尋才會呼叫 API。下一版本為了增加資訊量，加上了預設的呼叫 API 動作。
+
+兩次迭代的行為變更，造成了疏忽！而且在我開發用的 Pixel 7a/Android 13 上並不會 Crash。
 
 Crash 發生在不同手機上稍微不同：在 VIVO X80 上進到頁面後，輸入任何關鍵字在按下鍵盤上的搜尋，便會直接 crash；在其他手機上需要比較複雜的操作：
 
@@ -54,7 +58,7 @@ Fragment-)Compose Element: Render these records
 
 這也就是問題：兩個 thread 有機會同時操作同一個 list：一個 thread 讀取的同時，另一個 thread 去寫！也就是上 crash log 寫的：UI thread 正在嘗試讀取 list 中的第 11 筆並繪製到螢幕上時， background thread 拿著剛拿到的新資料寫進了同一個 list 裡...剛剛要拿東西還有怎麼突然沒有了！
 
-App 只好崩潰給你看...
+App 只能崩潰給你看...
 
 ## 解決方案
 
