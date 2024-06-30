@@ -9,7 +9,7 @@
         {% if f.name %}
           <h3 class="name">
             {% if f.website %}
-              <a href="{{ w.website }}">{{ f.name }}</a>
+              <a href="{{ f.website }}">{{ f.name }}</a>
             {% else %}
               {{ f.project_name }}
             {% endif %}
@@ -17,7 +17,7 @@
         {% endif %}
         <div class="date">
           {% if f.date %}
-            <span class="startDate">{{ w.date }}</span>
+            <span class="startDate">{{ f.date }}</span>
           {% endif %}
         </div>
         {% if f.summary %}

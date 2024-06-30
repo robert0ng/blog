@@ -41,6 +41,7 @@ I also introduced Kotlin for my team while working on another side project. Star
 
 You can [watch Noodoe experience in 3 mins on Youtube](https://youtu.be/1-ufYe6A14U){:target="_blank"} or [install Kymco Noode on Google Play](https://play.google.com/store/apps/details?id=com.noodoe.sunray){:target="_blank"}
 
+<iframe width="540" height="1170" src="https://www.youtube.com/embed/1-ufYe6A14U?si=zKnNiNcCy6YPjYyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 -----

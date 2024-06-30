@@ -2,8 +2,8 @@
   "basics": {
     "name": "Robert Wang",
     "label": "Software Developer",
-    "picture": "/assets/images/robertwang.jpg",
-    "email": "robert.ong+contact@protonmail.com",
+    "picture": "/assets/images/robert0ng.jpg",
+    "email": "robert.ong@pm.me",
     "website": "https://www.robertnotes.com",
     "summary": "Develope Android app since Android 1.5 (both Java and Kotlin) for several in-house/freelance projects. LOVE❤️ developing products to make life easier NOT the other way around. My philosiphy is get things done and get home early because that's what heros do(quotes from the book \"Rework\"). The hardest part in life is to communicate and I try to be nice and patient. Also happen to be bullet journalist, trying-to-be minimalist, Yogi, Runner, Father of 2 kids.",
     "location": {
@@ -16,8 +16,8 @@
     "profiles": [
       {
         "network": "Github",
-        "username": "cyberrob",
-        "url": "https://github.com/cyberrob"
+        "username": "robert0ng",
+        "url": "https://github.com/robert0ng"
       },
       {
         "network": "StackOverflow",
@@ -36,11 +36,21 @@
       "summary": "Keep delivering solid Android app experiences based on maintainable codebase with product teams",
       "highlights": [
         "Coaching team members to improve skillsets through regular code review and sharing mindset",
-        "Running Scrum and helping PO clarify specs",
+        "Running Scrum(mostly) and help to clarify specs",
         "Provide and maintain solid base components for feature development including SDK integration/DialogUtil/cross-activity-fragment data sharing mechanism/BaseToolbar with unit tests",
         "Develop a background expiration timer to monitor user interaction",
         "Try to have fun and also figuring out how Azure Devops CI pipeline and policies works",
-        "Recruite and help members to get onboard smoothly"
+        "Recruite and help members to get onboard smoothly",
+        {
+          "content": "Check out Next Bank on Google Play",
+          "isSelfDomain": false,
+          "link": "https://play.google.com/store/apps/details?id=com.nextbank.ncbportal&hl=zh_TW"
+        },
+        {
+          "content": "Register your unique personal account at Next Bank",
+          "isSelfDomain": false,
+          "link": "https://mgm.nextbank.com.tw/nxb/MW2YH?utm_source=app&utm_medium=link"
+        }
       ]
     },
     {
@@ -129,10 +139,21 @@
   ],
   "freelance-project": [
     {
+      "name": "A KYC service within Yuanta Insurance app",
+      "website": "https://play.google.com/store/apps/details?id=com.mds.yuantalife.icare&hl=zh_TW",
+      "date": "2023",
+      "summary": "Work with partner to deliver smooth KYC flow within existing app",
+      "highlights": [
+        "Embedded 3rd party library to verify user identity",
+        "Develop a customizable signature view to be accompanied with ID card, facial data",
+        "Isolated from existing Java code, entire flow is implemented with Kotlin"
+      ]
+    },
+    {
       "name": "Code4Green",
-      "website": "http://robertwang.tw",
+      "website": "/golf,/free-lance/2016/04/01/code4holland.html",
       "date": "2016",
-      "summary": "A score-recording app for Golf players",
+      "summary": "A score-keeping app for Golf players",
       "highlights": [
         "Cloned functions in iOS app as standalone Android App by myself"
       ]
