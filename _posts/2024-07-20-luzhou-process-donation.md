@@ -1,7 +1,7 @@
 ---
 author: robertwang
 layout: post
-title:  蘆洲廟會遶境的索討"
+title:  蘆洲廟會遶境的索討
 date:   2024-07-21
 tags: 
   - 蘆洲
