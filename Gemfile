@@ -11,3 +11,11 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag"
 end
 gem "webrick", "~> 1.8"
+
+# jekyll 3.9 (pulled in by github-pages) uses these without declaring them;
+# Ruby 3.4+ removed them from the default gems, so bundle exec jekyll build
+# fails on a modern Ruby without pinning them explicitly.
+gem "csv"
+gem "logger"
+gem "base64"
+gem "bigdecimal"
