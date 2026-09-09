@@ -35,12 +35,21 @@
       "endDate": "Current",
       "summary": "Keep delivering solid Android app experiences based on maintainable codebase with product teams",
       "highlights": [
-        "Coaching team members to improve skillsets through regular code review and sharing mindset",
-        "Running Scrum(mostly) and help to clarify specs",
-        "Provide and maintain solid base components for feature development including SDK integration/DialogUtil/cross-activity-fragment data sharing mechanism/BaseToolbar with unit tests",
-        "Develop a background expiration timer to monitor user interaction",
-        "Try to have fun and also figuring out how Azure Devops CI pipeline and policies works",
-        "Recruite and help members to get onboard smoothly",
+        "Built the Android app from ground up: accounts, credit card, deposits, transfers, and transaction history",
+        "Designed SdkManager/SdkWrapper to isolate third-party SDK integrations (OCR, identity verification, NFC); built shared BaseToolbar, session timeout, and MVVM multi-module architecture",
+        "Implemented MotionLayout card-flip animation — a signature UX feature maintained continuously since launch",
+        "Integrated biometric login (fingerprint/face) and componentized 2FA across all transaction confirmation flows",
+        "Led Jetpack Compose adoption: migrated forex, investment products, credit, transfer, and 2FA screens",
+        "Delivered TW Pay payment flow with Edge-to-Edge redesign, home screen Widget, and App Shortcut quick-pay entry",
+        "Built shared investment purchase flows across funds, stocks, and ETF with multi-currency deduction logic",
+        "Integrated NFC card reader SDK; maintained shared Kotlin Native library (API data layer) for both Android and iOS teams",
+        "Built PR automation scripts and introduced Chucker for API debugging; maintained Azure DevOps CI/CD pipelines for SIT/UAT/PROD",
+        "Coached team through code review, new-member onboarding, and Scrum facilitation",
+        {
+          "content": "More about my works at Next Bank",
+          "isSelfDomain": true,
+          "link": "/2026/09/08/nextbank-works.html"
+        },
         {
           "content": "Check out Next Bank on Google Play",
           "isSelfDomain": false,
