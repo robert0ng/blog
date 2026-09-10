@@ -1,13 +1,19 @@
-{% assign words_per_minute = site.words_per_minute | default: 200 %}
+{% comment %}
+  number_of_words splits on whitespace, so it drastically undercounts CJK
+  text (whole unspaced sentences count as a single "word"). Use character
+  count instead, at a reading speed tuned for this site's mostly-Chinese
+  content, so CJK posts don't all collapse to "~1 min read".
+{% endcomment %}
+{% assign chars_per_minute = site.chars_per_minute | default: 400 %}
 
 {% if post.read_time %}
-  {% assign words = post.content | strip_html | number_of_words %}
+  {% assign chars = post.content | strip_html | strip_newlines | remove: " " | size %}
 {% elsif page.read_time %}
-  {% assign words = page.content | strip_html | number_of_words %}
+  {% assign chars = page.content | strip_html | strip_newlines | remove: " " | size %}
 {% endif %}
 
-{% if words < words_per_minute %}
+{% if chars < chars_per_minute %}
   ~1 {{ site.data.theme.t.min_read | default: 'min read' }}
 {% else %}
-  {{ words | divided_by:words_per_minute }} {{ site.data.theme.t.min_read | default: 'min read' }}
+  {{ chars | divided_by: chars_per_minute }} {{ site.data.theme.t.min_read | default: 'min read' }}
 {% endif %}
