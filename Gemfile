@@ -19,3 +19,9 @@ gem "csv"
 gem "logger"
 gem "base64"
 gem "bigdecimal"
+
+group :development do
+  # Used by script/verify.sh to check the built site for broken internal
+  # links/images (the class of bug fixed in the CNY post's image link).
+  gem "html-proofer"
+end
