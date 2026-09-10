@@ -61,7 +61,6 @@ exclude:
   - .sass-cache
   - .scss-lint.yml
   - CHANGELOG
-  - docs
   - Gemfile
   - Gemfile.lock
   - LICENSE
