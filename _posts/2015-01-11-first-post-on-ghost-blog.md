@@ -5,11 +5,11 @@ date:   2015-01-11
 categories: 部落格
 ---
 
-真是受夠了幾年來一次的風水輪流轉，一下是無名，又是blogspot，來了[Tumblr](tumblr.com)跟著還有[Logdown](logdown.com)讓你可以直接寫Markdown。每次跟風的下場就是，又要備份又要搬家，然後又是一片荒煙漫草無人聞問！
+真是受夠了幾年來一次的風水輪流轉，一下是無名，又是blogspot，來了[Tumblr](https://tumblr.com)跟著還有[Logdown](https://logdown.com)讓你可以直接寫Markdown。每次跟風的下場就是，又要備份又要搬家，然後又是一片荒煙漫草無人聞問！
 
 其實我也不在意是否有人來訪，反正只是要寫自我，理理思緒、練練文筆，並不在意那些。
 
-今天買了個Domain Name叫 [its-robertwang.com](its-robertwang.com)，應該是設定好了，嘿！真是等不及明天一早就能看到！
+今天買了個Domain Name叫 [its-robertwang.com](https://its-robertwang.com)，應該是設定好了，嘿！真是等不及明天一早就能看到！
 
 總之，先來寫下對這個Blog的期許：
 

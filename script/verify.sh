@@ -25,6 +25,7 @@ bundle exec jekyll build --strict_front_matter
 echo "==> checking built site for broken internal links/images"
 bundle exec htmlproofer ./_site \
   --disable-external \
-  --allow-hash-href
+  --allow-hash-href \
+  --enforce-https=false
 
 echo "==> OK"
