@@ -9,7 +9,7 @@
         {% if p.name %}
           <h4 class="title">
             {% if p.website %}
-              <a href="{{ p.website }}">{{ p.name }}</a>
+              <a href="{{ p.website }}" class="no-reformat">{{ p.name }}</a>
             {% else %}
               {{ p.name }}
             {% endif %}

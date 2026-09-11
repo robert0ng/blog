@@ -17,7 +17,7 @@
       <div class="phone"><strong>Phone</strong> {{ cv.basics.phone }}</div>
     {% endif %}
     {% if cv.basics.website %}
-      <div class="website"><strong>Website</strong> <a href="{{ cv.basics.website }}">{{ cv.basics.website }}</a></div>
+      <div class="website"><strong>Website</strong> <a href="{{ cv.basics.website }}" class="no-reformat">{{ cv.basics.website }}</a></div>
     {% endif %}
     {% if cv.basics.profiles %}
       {% for p in cv.basics.profiles %}

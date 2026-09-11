@@ -9,7 +9,7 @@
         {% if v.organization %}
           <h3 class="company">
             {% if v.website %}
-              <a href="{{ v.website }}">{{ v.organization }}</a>
+              <a href="{{ v.website }}" class="no-reformat">{{ v.organization }}</a>
             {% else %}
               {{ v.organization }}
             {% endif %}

@@ -9,7 +9,7 @@
         {% if w.company %}
           <h3 class="name">
             {% if w.website %}
-              <a href="{{ w.website }}">{{ w.company }}</a>
+              <a href="{{ w.website }}" class="no-reformat">{{ w.company }}</a>
             {% else %}
               {{ w.company }}
             {% endif %}
@@ -38,9 +38,9 @@
             {% for highlight in w.highlights %}
               {% if highlight.link %}
                 {% if highlight.isSelfDomain %}
-                  <li><a href="{{ site.url }}{{ highlight.link }}" target="_blank">{{ highlight.content }}</a></li>
+                  <li><a href="{{ site.url }}{{ highlight.link }}" target="_blank" class="no-reformat">{{ highlight.content }}</a></li>
                 {% else %}
-                  <li><a href="{{ highlight.link }}" target="_blank">{{ highlight.content }}</a></li>
+                  <li><a href="{{ highlight.link }}" target="_blank" class="no-reformat">{{ highlight.content }}</a></li>
                 {% endif %}
               {% else %}
                <li>{{ highlight }}</li>

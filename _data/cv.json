@@ -51,14 +51,9 @@
           "link": "/2026/09/08/nextbank-works.html"
         },
         {
-          "content": "Check out Next Bank on Google Play",
+          "content": "Next Bank on Google Play",
           "isSelfDomain": false,
           "link": "https://play.google.com/store/apps/details?id=com.nextbank.ncbportal&hl=zh_TW"
-        },
-        {
-          "content": "Register your unique personal account at Next Bank",
-          "isSelfDomain": false,
-          "link": "https://mgm.nextbank.com.tw/nxb/MW2YH?utm_source=app&utm_medium=link"
         }
       ]
     },
@@ -199,18 +194,14 @@
       "area": "Information management",
       "studyType": "Master",
       "startDate": "Sep 1, 2004",
-      "endDate": "Jun 30, 2006",
-      "gpa": "",
-      "courses": []
+      "endDate": "Jun 30, 2006"
     },
     {
       "institution": "FJU",
       "area": "Information management",
       "studyType": "Bachelor",
       "startDate": "Sep 1, 2000",
-      "endDate": "Jun 30, 2004",
-      "gpa": "",
-      "courses": []
+      "endDate": "Jun 30, 2004"
     }
   ],
   "awards": [
@@ -312,7 +303,7 @@
   ],
   "languages": [
     {
-      "language": "Chinese",
+      "language": "Mandarin",
       "fluency": "Native speaker"
     },
     {
@@ -330,20 +321,20 @@
   ],
   "interests": [
     {
-      "name": "Basketball",
-      "keywords": []
+      "name": "Running",
+      "keywords": ["5km", "10km", "marathon"]
     },
     {
-      "name": "Piano",
-      "keywords": []
+      "name": "Yoga",
+      "keywords": ["Pilates","Yoga Ball", "Stretching"]
     },
     {
-      "name": "History & Sci-fi books",
-      "keywords": []
+      "name": "Historical books & Fiction novels",
+      "keywords": ["Taiwan history", "World trading history"]
     },
     {
       "name": "Raspberry Pi",
-      "keywords": []
+      "keywords": ["Telegram bot", "Monitor", "cron job"]
     }
   ]
 }

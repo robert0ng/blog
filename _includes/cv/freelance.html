@@ -9,7 +9,7 @@
         {% if f.name %}
           <h3 class="name">
             {% if f.website %}
-              <a href="{{ f.website }}">{{ f.name }}</a>
+              <a href="{{ f.website }}" class="no-reformat">{{ f.name }}</a>
             {% else %}
               {{ f.project_name }}
             {% endif %}
