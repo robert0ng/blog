@@ -5,7 +5,7 @@
     "picture": "/assets/images/robert0ng.jpg",
     "email": "robert.ong@pm.me",
     "website": "https://www.robertnotes.com",
-    "summary": "Develope Android app since Android 1.5 (both Java and Kotlin) for several in-house/freelance projects. LOVE❤️ developing products to make life easier NOT the other way around. My philosiphy is get things done and get home early because that's what heros do(quotes from the book \"Rework\"). The hardest part in life is to communicate and I try to be nice and patient. Also happen to be bullet journalist, trying-to-be minimalist, Yogi, Runner, Father of 2 kids.",
+    "summary": "Develope Android app since Android 1.5 (both Java and Kotlin) for several in-house/freelance projects. LOVE❤️ developing products to make life easier NOT the other way around. My philosiphy is get things done and get home early because that's what heros do(quotes from the book \"[Rework](https://a.co/d/02dQNDm9)\"). Communicating with others is the most intriguing part of mylife because it takes lot of efforts but no guaranteed outcome. I'm also happen to be bullet journalist, trying-to-be minimalist, Yogi, Runner, Father of 2 kids.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -18,11 +18,6 @@
         "network": "Github",
         "username": "robert0ng",
         "url": "https://github.com/robert0ng"
-      },
-      {
-        "network": "StackOverflow",
-        "username": "robertwang",
-        "url": "http://stackoverflow.com/users/164005/robert"
       }
     ]
   },
@@ -36,17 +31,12 @@
       "summary": "Keep delivering solid Android app experiences based on maintainable codebase with product teams",
       "highlights": [
         "Built the Android app from ground up: accounts, credit card, deposits, transfers, and transaction history",
-        "Designed SdkManager/SdkWrapper to isolate third-party SDK integrations (OCR, identity verification, NFC); built shared BaseToolbar, session timeout, and MVVM multi-module architecture",
-        "Implemented MotionLayout card-flip animation — a signature UX feature maintained continuously since launch",
-        "Integrated biometric login (fingerprint/face) and componentized 2FA across all transaction confirmation flows",
+        "Designed and implemented major components like SdkManager, card-flipping MotionLayout animation, shared BaseToolbar, session timeout architecture, etc",
+        "Integrated 2FA SDK to come up a centralized component to be used across all majort transaction flows",
         "Led Jetpack Compose adoption: migrated forex, investment products, credit, transfer, and 2FA screens",
-        "Delivered TW Pay payment flow with Edge-to-Edge redesign, home screen Widget, and App Shortcut quick-pay entry",
-        "Built shared investment purchase flows across funds, stocks, and ETF with multi-currency deduction logic",
-        "Integrated NFC card reader SDK; maintained shared Kotlin Native library (API data layer) for both Android and iOS teams",
-        "Built PR automation scripts and introduced Chucker for API debugging; maintained Azure DevOps CI/CD pipelines for SIT/UAT/PROD",
         "Coached team through code review, new-member onboarding, and Scrum facilitation",
         {
-          "content": "More about my works at Next Bank",
+          "content": "More details about Next Bank works",
           "isSelfDomain": true,
           "link": "/2026/09/08/nextbank-works.html"
         },
@@ -70,7 +60,7 @@
         "Responsible for CI maintenance and use CircleCI also",
         "Running Scrum via Jira/Confluence/Slack",
         {
-          "content": "For more details please check out this post",
+          "content": "More details about Noodoe works",
           "isSelfDomain": true,
           "link": "/noodoe,/work,/kotlin,/journey,/bluetooth,/compass,/navigation,/dashboard/2020/01/15/noodoe-experience.html"
         }
@@ -84,14 +74,9 @@
       "endDate": "March, 2016",
       "summary": "Developed and maintained Android app",
       "highlights": [
-        "First time join small startup team",
+        "First time joining small startup",
         "Develop Android app with features including browsing, sell products and payment integration",
-        "Learn the struggles of startup team with limited resources",
-        {
-          "content": "媒體報導: 行動拍賣新戰場，KKBOX 推出 KKTOWN 二手拍賣",
-          "link": "https://www.inside.com.tw/article/5466-kktown-the-new-c2c-e-commerce-app-of-kkbox",
-          "isSelfDomain": false
-        },
+        "Learn startup team struggles the hard way but fun while looking back",
         {
           "content": "媒體報導: 用交易探索世界：台灣行動電商平台「SOLDA 手打拍賣」完全體今上架",
           "link": "https://www.inside.com.tw/article/4565-solda",
@@ -223,14 +208,14 @@
       "name": "Applying CCNN to Recognizing Patterns in the Time Series of TAIEX Futures",
       "publisher": "NCTU",
       "releaseDate": "2005",
-      "website": "https://ir.nctu.edu.tw/handle/11536/79534",
-      "summary": "Innovative middle-out compression algorithm that changes the way we store data."
+      "website": "https://hdl.handle.net/11296/9e675j",
+      "summary": ""
     },
     {
       "name": "利用G-Sensor及電子羅盤於手機定位之實驗",
       "publisher": "ITRI ICL Journal Paper",
       "releaseDate": "2009",
-      "website": "http://readopac1.ncl.edu.tw/nclJournal/search/detail.jsp?sysId=0006573693&dtdId=000040&search_type=detail&la=ch",
+      "website": "https://tpl.ncl.edu.tw/NclService/JournalContentDetail?SysId=A10007741",
       "summary": ""
     }
   ],
