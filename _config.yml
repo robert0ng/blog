@@ -53,6 +53,7 @@ paginate_path: /page:num/
 # Exclude from processing.
 exclude:
   - .asset-cache
+  - artifacts
   - .bundle
   - .codeclimate.yml
   - .editorconfig

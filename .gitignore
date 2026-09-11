@@ -2,6 +2,7 @@
 *.sublime-project
 *.sublime-workspace
 .bundle
+artifacts/*.pdf
 .DS_Store
 .jekyll-cache
 .jekyll-metadata
