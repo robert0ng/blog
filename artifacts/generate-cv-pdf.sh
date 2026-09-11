@@ -1,89 +1,62 @@
 #!/bin/sh
-# Generate a PDF of the CV page (cv.html) into artifacts/cv.pdf.
+# Generate a professionally-typeset PDF of the CV into artifacts/cv.pdf,
+# straight from _data/cv.json -- no Jekyll build, no browser involved.
 # Run this any time you want an up-to-date CV PDF, e.g. before an
 # interview. Re-run freely -- it overwrites artifacts/cv.pdf each time.
 #
-# Requires Ruby matching .ruby-version (see script/verify.sh for why),
-# Google Chrome installed at the standard macOS path, and python3/curl
-# on PATH (both ship with macOS).
+# Requires RenderCV (https://rendercv.com), a Python/Typst-based CV
+# typesetter -- much more professional output than printing the site's
+# own cv.html page (the previous approach). One-time setup:
+#   pipx install "rendercv[full]"
+#   pipx inject rendercv pyyaml   # needed by cv_to_rendercv.py
 set -e
 cd "$(dirname "$0")/.."
 
-CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 OUT="artifacts/cv.pdf"
-PORT=4173
+CONVERTER="artifacts/cv_to_rendercv.py"
+GENERATED_YAML="artifacts/.cv-rendercv.yaml"
+RENDER_OUTPUT_DIR="artifacts/.rendercv_output"
 
-want_ruby="$(cat .ruby-version)"
-have_ruby="$(ruby -e 'print RUBY_VERSION')"
-if [ "$have_ruby" != "$want_ruby" ]; then
-  echo "warning: active Ruby is $have_ruby, .ruby-version wants $want_ruby" >&2
-  echo "         the build may fail on a Ruby this project isn't pinned to." >&2
-fi
-
-if [ ! -x "$CHROME" ]; then
-  echo "error: Google Chrome not found at: $CHROME" >&2
-  echo "       install it, or edit CHROME= in this script to match your setup." >&2
+if ! command -v rendercv >/dev/null 2>&1; then
+  echo "error: rendercv not found on PATH." >&2
+  echo "       install it with: pipx install \"rendercv[full]\"" >&2
   exit 1
 fi
 
-echo "==> bundle install"
-bundle check >/dev/null 2>&1 || bundle install
+# cv_to_rendercv.py needs PyYAML. RenderCV itself is installed in its own
+# pipx-managed virtualenv; reuse that same interpreter (found via the
+# rendercv shim script's shebang line) rather than requiring a second,
+# separate Python environment just for one dependency.
+RENDERCV_PYTHON="$(head -1 "$(command -v rendercv)" | sed 's/^#!//' | awk '{print $1}')"
+if [ ! -x "$RENDERCV_PYTHON" ]; then
+  echo "error: could not resolve rendercv's own Python interpreter from its shim script." >&2
+  echo "       expected a shebang line like '#!/path/to/venv/bin/python' in: $(command -v rendercv)" >&2
+  exit 1
+fi
+if ! "$RENDERCV_PYTHON" -c 'import yaml' >/dev/null 2>&1; then
+  echo "error: PyYAML not installed in rendercv's virtualenv." >&2
+  echo "       install it with: pipx inject rendercv pyyaml" >&2
+  exit 1
+fi
 
-echo "==> jekyll build"
-bundle exec jekyll build --strict_front_matter
-
-server_pid=""
-chrome_profile=""
-cleanup() {
-  [ -n "$server_pid" ] && kill "$server_pid" >/dev/null 2>&1
-  if [ -n "$chrome_profile" ]; then
-    # Chrome forks helper/renderer processes that inherit --user-data-dir
-    # in their own argv but aren't children of the PID we captured, so
-    # killing that one PID alone can leave them running (and racing our
-    # rm -rf). Match on the unique profile path instead.
-    pkill -f "$chrome_profile" >/dev/null 2>&1 || true
-    sleep 0.3
-    rm -rf "$chrome_profile"
-  fi
-}
-trap cleanup EXIT INT TERM
-
-echo "==> serving ./_site on 127.0.0.1:$PORT"
-(cd _site && exec python3 -m http.server "$PORT" >/dev/null 2>&1) &
-server_pid=$!
-
-tries=0
-until curl -sf "http://127.0.0.1:$PORT/cv.html" >/dev/null 2>&1; do
-  tries=$((tries + 1))
-  if [ "$tries" -ge 30 ]; then
-    echo "error: local server never came up on port $PORT" >&2
-    exit 1
-  fi
-  sleep 0.2
-done
-
-echo "==> rendering cv.html to $OUT"
+echo "==> converting _data/cv.json to RenderCV's YAML schema"
 mkdir -p artifacts
-rm -f "$OUT"
-chrome_profile="$(mktemp -d)"
-"$CHROME" \
-  --headless --disable-gpu --no-sandbox \
-  --user-data-dir="$chrome_profile" \
-  --no-pdf-header-footer \
-  --print-to-pdf="$OUT" \
-  "http://127.0.0.1:$PORT/cv.html" >/dev/null 2>&1 &
+"$RENDERCV_PYTHON" "$CONVERTER" _data/cv.json "$GENERATED_YAML"
 
-tries=0
-until [ -s "$OUT" ]; do
-  tries=$((tries + 1))
-  if [ "$tries" -ge 50 ]; then
-    echo "error: $OUT was never produced (Chrome timed out or failed)" >&2
-    exit 1
-  fi
-  sleep 0.2
-done
-# Chrome may keep running briefly after the PDF is fully written; the
-# EXIT trap (cleanup) tears it down along with its profile dir below.
+echo "==> rendering with RenderCV"
+rm -rf "$RENDER_OUTPUT_DIR"
+# --output-folder is resolved relative to the YAML file's own directory
+# (artifacts/), not the cwd -- pass just the basename to land at
+# artifacts/.rendercv_output, not artifacts/artifacts/.rendercv_output.
+rendercv render "$GENERATED_YAML" --output-folder "$(basename "$RENDER_OUTPUT_DIR")" >/dev/null
+
+generated_pdf="$(find "$RENDER_OUTPUT_DIR" -maxdepth 1 -name '*.pdf' | head -1)"
+if [ -z "$generated_pdf" ]; then
+  echo "error: RenderCV did not produce a PDF in $RENDER_OUTPUT_DIR" >&2
+  exit 1
+fi
+mv "$generated_pdf" "$OUT"
+rm -rf "$RENDER_OUTPUT_DIR" "$GENERATED_YAML"
 
 if command -v pdfinfo >/dev/null 2>&1; then
   pages="$(pdfinfo "$OUT" 2>/dev/null | awk '/^Pages:/ {print $2}')"

@@ -3,6 +3,8 @@
 *.sublime-workspace
 .bundle
 artifacts/*.pdf
+artifacts/.cv-rendercv.yaml
+artifacts/.rendercv_output/
 .DS_Store
 .jekyll-cache
 .jekyll-metadata
