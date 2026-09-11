@@ -1,8 +1,9 @@
 #!/bin/sh
-# Generate a professionally-typeset PDF of the CV into artifacts/cv.pdf,
-# straight from _data/cv.json -- no Jekyll build, no browser involved.
-# Run this any time you want an up-to-date CV PDF, e.g. before an
-# interview. Re-run freely -- it overwrites artifacts/cv.pdf each time.
+# Generate a professionally-typeset PDF of the CV into
+# artifacts/robert-wang-cv.pdf, straight from _data/cv.json -- no Jekyll
+# build, no browser involved. Run this any time you want an up-to-date
+# CV PDF, e.g. before an interview. Re-run freely -- it overwrites the
+# output each time.
 #
 # Requires RenderCV (https://rendercv.com), a Python/Typst-based CV
 # typesetter -- much more professional output than printing the site's
@@ -12,7 +13,7 @@
 set -e
 cd "$(dirname "$0")/.."
 
-OUT="artifacts/cv.pdf"
+OUT="artifacts/robert-wang-cv.pdf"
 CONVERTER="artifacts/cv_to_rendercv.py"
 GENERATED_YAML="artifacts/.cv-rendercv.yaml"
 RENDER_OUTPUT_DIR="artifacts/.rendercv_output"
