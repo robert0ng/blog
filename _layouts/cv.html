@@ -4,12 +4,6 @@ layout: default
 {% assign cv = site.data.cv %}
 {% include cv/intro.html %}
 
-<div class="cv-print-actions no-print">
-  <button type="button" class="btn" onclick="window.print()">
-    {{ site.data.theme.t.print_cv | default: 'Print / Save as PDF' }}
-  </button>
-</div>
-
 <main id="main" class="page-content" aria-label="Content">
   <div class="index inner">
     <div>{{ content }}</div>
